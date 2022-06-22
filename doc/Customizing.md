@@ -21,6 +21,7 @@ Create the main record for your Validation.
 Create as many various result codes as required by the business. 
 
 | Field Name | Description |
+| ----------- | ----------- |
 | Result Code | ID of the result. |
 | Integration Spot | Name of the business process.  |
 | Message Type | Type of the message shown to the business user. |
@@ -34,6 +35,7 @@ You can keep the Integration spot empty. If so, this row will be used for the In
 ## Enable Selective Online Validation
 Here you can enable or disable the validation execution in each supported business process. To enable the validation in certain process, this table must contain a row for given Integration spot and the checkbox must ticked. 
 | Field Name | Description |
+| ----------- | ----------- |
 | Integration Spot | Name of the business process |
 | Enable | If checked, the validation will be enabled | 
 

@@ -32,6 +32,16 @@ You can keep the Integration spot empty. If so, this row will be used for the In
 
 > The value in the Result Code Descripition is saved in the logon language used during maintenance of the view. If you require the text in other languages, this column must be maintained again while being logged on in all required languages. 
 
+We recommend to maintain at least the following result codes. You can also define additional ones if needed. 
+| Resutl Code | Description |
+| ----------- | ----------- |
+| 1 | Valid | 
+| 2 | Invalid | 
+| 3 | Valid, Internal result exists *@todo link cache handling* | 
+| 4 | Validation Disabled. *@todo add link to the help protal* | 
+| 4 | Technical error | 
+
+
 ## Enable Selective Online Validation
 Here you can enable or disable the validation execution in each supported business process. To enable the validation in certain process, this table must contain a row for given Integration spot and the checkbox must ticked. 
 | Field Name | Description |
@@ -40,8 +50,18 @@ Here you can enable or disable the validation execution in each supported busine
 | Enable | If checked, the validation will be enabled | 
 
 
-## Create a RFC
+## Create an RFC
+An RFC holds the parameters (URL, credentials) needed for an connection to an exernal service. 
+
+### Online validation
+In Go to the transaction SM59 and create an RFC to the desired service. The parameters for the RFC shall be set according to the documentation of the online service. 
+
 
 ## Configure the OVS with the newly created RFC
-After the RFC is created, the OVS must know which RFC shall be used for which Check ID. Open the following IMD path Cross-Application Components -> SAP Business Partner -> Business Partner -> Basic Settings -> Online Validation -> Activate Validation Checks
-or use the transaction OVS_CHECKACTIV. 
+After the RFC is created, the OVS must know which RFC shall be used for which Check ID. Open the following IMD path Cross-Application Components -> SAP Business Partner -> Business Partner -> Basic Settings -> Online Validation -> Activate Validation Checks or use the transaction OVS_CHECKACTIV. 
+The name of the RFC is case-sensitive - the name must be maintained in the same case as in SM59!
+
+> Once the RFC is maintained in the OVS_CHECKACTIV as described bellow, the newly defined validation will be executed. If step is done before the valiation is fully implemented, some business processes might be blocked because an error about missing implementation will be raised. We recommend to do this step when the implementation is ready for testing. 
+
+## Offline validation
+No all validations need to communicate with an exernal service in the validation time. In such case, go to the transaction OVS_CHECKACTIV and maintain a row with the Check ID and an empty RFC. 

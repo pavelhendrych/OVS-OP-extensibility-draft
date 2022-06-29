@@ -25,7 +25,8 @@ The method IF_OVS_CHECK~VALIDATE is supposed to perform the validation. It has t
 
 ### Data extraction for validation
 In the previous chapter, we learned how to identify the business process requesting the validation. It tells us  what is the content of `it_data`. Now we need to extract the data to be validated from the `it_data` and validate them. 
-There are the following methods in the `ZCL_CHECKID_EXAMPLE` class that shows the conversion from type-free `it_data` into local variables with the correct data type. You can use the method stub in your implementation anc concentrate on the validation itself. 
+There are the following methods in the `ZCL_CHECKID_EXAMPLE` class that shows the conversion from type-free `it_data` into local variables with the correct data type. The examples show extractions of all available values in 'it_data'. You can delete the variables which are not needed. 
+You can use the method stub in your implementation and concentrate on the validation itself. 
 | Method name | Description |
 | ----------- | ----------- |
 | `validate_billing_sales` | Sales Order or Billing posting. The it_data contains only VAT IDs toghether with the IDs of the business partners. |
@@ -42,3 +43,4 @@ ovs_t_history
 to_xstring
  cl_ovs_services=>is_disabled
  cl_ovs_services=>is_valid_in_cache
+ comm class

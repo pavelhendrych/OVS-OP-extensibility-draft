@@ -14,6 +14,7 @@ Please edit this file as it is the primary description file for your project. Yo
 
 # Extensibility options for Online Validation Service
 <!-- Please include descriptive title -->
+SAP internal - it will be official published later. 
 
 <!--- Register repository https://api.reuse.software/register, then add REUSE badge:
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
@@ -33,7 +34,7 @@ The information in this repository is intended for ABAP Developers.
 This repository contains a step-by-step guide how to develop an own validation including example classes that can be used as a base for your development. You can [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the repository to your computer or import the repository to your ABAP system using e.g. [abapGit](https://docs.abapgit.org/).
 
 ## Implementation
-The implementation of an own validation is described [here](doc/ProcessDescription.md). 
+The step-by-step implementation of an own validation is described [here](doc/ProcessDescription.md). 
 
 ## Known Issues
 <!-- You may simply state "No known issues. -->
@@ -50,9 +51,11 @@ If you wish to contribute code, offer fixes or improvements, please send a pull 
 Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
 
 ## Useful links
+- [Download or Clone a GitHub repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 - [MD language Cheat sheet](https://www.markdownguide.org/cheat-sheet/)
 
 ## Updates:
 | Date | Author | Description | 
 | ------------ | ----------- | --------------------------------------------------- |
 | ?, 2022 | I334850 | Initial commit. |
+

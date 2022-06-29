@@ -11,13 +11,13 @@ This Git repository contains an example class
 ZCL_CHECKID_EXAMPLE
 ```
 You can either 
-- Checkout and copy this class to your system. Then it can be used as the Implementation class during the BAdI creation. 
-- Create a brand new implementation class. 
+- Checkout this GitHub repository or copy this class into your system. Then it can be used as the Implementation class during the BAdI creation. 
+- Create a brand new implementation class. You can copy & paste desired code snippets from the example class to your implementation class. 
 
-When the BAdI implementation is done, you have to provide a filter
+When the BAdI implementation is created, you have to provide a BAdI filter
 ```
-	CHECK_ID = <your_check_id>
+CHECK_ID = <your_check_id>
 ```
 
 Example
-![BAdI filter](doc/BAdI_Filter.png)
+![BAdI filter](img/BAdI_Filter.png)

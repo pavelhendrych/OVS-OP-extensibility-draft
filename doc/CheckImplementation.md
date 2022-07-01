@@ -79,12 +79,11 @@ The table has the following fields:
 | `FULL_RESPONSE` | If needed, you can store here a piece or the whole response form the online service. |
 
 The partner type & number are usualy derived from the input data. For example, when called from the Automatic Payment program, the input data contain ID of the vendor (or customer). 
-The REQUEST and the FULL_RESPONSE contain a value in the xstring form. See [ReusableObjects](ReusableObjects.md) for info on string to xstring converstion. The program Show history of online checks uses a xml viewer to display the content of those fields. Althought the value can have any form, SAP recommends to use the xml form for nice formatted view. Xml format is used by other SAP delivered validations. 
+The REQUEST and the FULL_RESPONSE contain a value in the xstring form. You can use the method `ZCL_CHECKID_EXAMPLE=>to_xstring` in the example class. The program Show history of online checks uses a xml viewer to display the content of those fields. Althought the value can have any form, SAP recommends to use the xml form for nice formatted view. Xml format is used by other SAP delivered validations. 
 
+<!--
+This info shall be published once the way how the BAdIs are called is changed. 
 
-## How to populate the results table
-ovs_t_history
-to_xstring
- cl_ovs_services=>is_disabled
- cl_ovs_services=>is_valid_in_cache
- comm class
+## Exceptional states
+It might happen that the validation cannot be started or successfully finished. You can either return a dedicated Check Result code for a such situation or you can stop further validations. 
+-->

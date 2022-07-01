@@ -1,24 +1,21 @@
 # Creating an own validation
 
 # Preparation
-Here you can find a step-by-step instructions how to implement a stub of a new validation and activate it. 
+Here you can find a step-by-step instructions how to implement a stub of a new validation and activate it. Make sure you read through all the sections first before you start any coding. It will help you understand what is actually needed and how can you reuse both the example class in this GitHub repository and existing code in your S/4Hana system. 
 
-## [1. Customizing](doc/Customizing.md)
-## [2. Business Add-In implementation](doc/BAdIImplementation.md)
-## [3. Validation Implementation](doc/CheckImplementation.md)
+## [1. Customizing](Customizing.md)
+## [2. Business Add-In implementation](BAdIImplementation.md)
+## [3. Validation Implementation](CheckImplementation.md)
+## [4. Reusable Objects](ReusableObjects.md)
+
 
 TBD
-Communication, Result handling
-REuse existing stuff
-- Cache 
-- Disablement
-- messages
-- Customizing
-How to fill the result table
+
+
+replace all OVF with OVS
 
 
 Analyze the service API
-
 
 
 

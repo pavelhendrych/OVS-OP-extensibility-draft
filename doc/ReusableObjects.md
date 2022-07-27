@@ -1,8 +1,8 @@
-# Use of SAP delivered objects
-SAP delivers classes and methods that can be reused in your validation. 
+# Usage of SAP Delivered Objects
+You can reuse classes and methods that SAP delivers for your own validation. 
 
 ### Disablement
-During the validation process, you might need to check whether currently validated value has been disabled for validations. For that, you can reuse the following method. 
+During the validation process, you might need to check whether currently validated value has been disabled for validations. For that, you can reuse the following method: 
 ```
 	DATA(iv_disabled) = cl_ovs_services=>is_disabled( 
       EXPORTING 
@@ -11,13 +11,12 @@ During the validation process, you might need to check whether currently validat
         iv_check_id = <check_id>
         iv_check_sub_id = <sub_id ).
 ```
-If the `iv_disabled` is set to true, the result of the validation shall be a value dedicated for Disabled validations in the [Customizing](Customizing.md).
+If the value has been disabled, the result of the validation should have an entry for disabled validations in the [Customizing](Customizing.md).
 
 
 
-### Reusing existing validation results
-The validation of one particular value can be executed several times per day. It is unlikely that the used online service would return a different result. The [Customizing](Customizing.md) even allows to reuse an existing values for a couple of days. 
-An existing value shall be reused only when it is equal to 'VALID'. A dedicated Result code for this situation shall be maintained in the [Customizing](Customizing.md). 
+### Reusing Existing validation Results
+The validation of one particular value can be executed several times per day. It is unlikely that the used online service would return a different result. The [Customizing](Customizing.md) even enables you to reuse the existing values for a couple of days if the existing value is 'VALID'. If you reuse the existing values, you need to maintain a dedicated result code in the [Customizing](Customizing.md). 
 ```
 	cl_ovs_services=>is_valid_in_cache(  
       EXPORTING 
@@ -35,8 +34,8 @@ An existing value shall be reused only when it is equal to 'VALID'. A dedicated 
 
 The parameter `lv_valid` is set if the cache contains a value within the validity set in the [Customizing](Customizing.md). Only if the `lv_valid` is set, you can use the `lv_last_result`. Otherwise, it has an undefined value. 
 
- ### Get message type
- The decision whether or not to dislay any validation message shall be based on the [Customizing](Customizing.md) and not purely on the validation result. For this, you might need to access the customizing to get the Message type and Message text. 
+ ### Get Message Type
+ Based on the [Customizing](Customizing.md), you need to decide whether you want to display any validation message in addition to the validation result. If you decide to display a validation message, maintain the message type and message text in the Customizing. 
 ```
  	DATA(ls_msg) = cl_ovs_services=>get_message(
             iv_check_id         = <check_id>
@@ -47,17 +46,18 @@ The parameter `lv_valid` is set if the cache contains a value within the validit
 	ENDIF. 		
 ```
 
-### Access to the customizing
-In case you need to access some other values maintained in the [Customizing](Customizing.md), you can reuse one of the methods defined in the class `cl_ovs_customizing`. 
+### Reuse of Methods for Customizing
+If you need to access some other values maintained in the [Customizing](Customizing.md), you can reuse one of the methods defined in the `cl_ovs_customizing` class. 
 
  
- ### Communication with an external service
-In case a simple, xml/text payload-based communication is required, you can reuse the class `cl_ovs_comm`. The communication is synchronous. This class might not be suitable for REST-like based services where a part of the request is a part of the URL. 
+ ### Communication with an External Service
+If a simple communication with an external service is required through xml or text payload, you can reuse the `cl_ovs_comm` class. The communication is synchronous. 
+Note that this class might not be suitable for REST-like based services in which a part of the request is a part of the URL. 
 
 | Method | Description |
 | ----------- | ----------- |
-| `open_connection` | Opens a connection to a online resource. `iv_comm_system` requires a name of an RFC. This name can be obtained from the customizing using the `cl_ovs_customizing` class.  | 
+| `open_connection` | Opens a connection to an online resource. `iv_comm_system` requires a name of an RFC. This name can be obtained from the customizing using the `cl_ovs_customizing` class.  | 
 | `send_sync` | Sends the request in the http request body and waits for a response which is then returned.  | 
 | `close_connection` | Must be called at the end of the validation process to release all the network resources.  | 
-If there is a problem within the communication, the `send_sync` method throws an `cx_ovs_error`. Similarily, the method `open_connection` throws the same exception if the communication cannot be opened (wrong URL, Unauthorized etc.).
+If there is an issue with the communication, the `send_sync` method throws an `cx_ovs_error`. Similarly, the `open_connection` method throws the same exception if the communication cannot be opened (wrong URL, Unauthorized etc.).
 

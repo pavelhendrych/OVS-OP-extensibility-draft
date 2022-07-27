@@ -1,20 +1,20 @@
-# Business Add-In implementation
+# Business Add-In Implementation
 
-Each validation must be located in a standalone BAdI implementation. 
-&nbsp
-Go to the transaction SE19, check 'New BAdI' in the Create implementation secion and provide OVS_ENH_CHECK as the name of the Enhancement spot. 
-You will be prompted for the name of the Enhancement spot and the underlying BAdI, choose anything in customer namespace. 
+You need to implement the enhancement spot from the BAdI: Online Check BAdI for each validation. 
 
-## Implementation class
-This Git repository contains an example class
+To create a BAdI implementation, proceed as follows:
+1. Go to the SE19 transaction.
+2. In the Create Implementation section, select the New BadI option and enter OVS_ENH_CHECK in the Enhancement Spot field. 
+3. Select Create.
+Enter the name of the enhancement spot and BAdI as needed. 
+
+## Implementation Class
+You can use the following example of a implementation class as a reference when creating the BAdI:
 ```
 ZCL_CHECKID_EXAMPLE
 ```
-You can either 
-- Checkout this GitHub repository or copy this class into your system. Then it can be used as the Implementation class during the BAdI creation. 
-- Create a brand new implementation class. You can copy & paste desired code snippets from the example class to your implementation class. 
 
-When the BAdI implementation is created, you have to provide a BAdI filter
+When you have created the BAdI implementation, enter a BAdI filter just as the example below:
 ```
 CHECK_ID = <your_check_id>
 ```

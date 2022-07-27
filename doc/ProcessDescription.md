@@ -1,7 +1,8 @@
-# Creating an own validation
+# Creating Your Own Validation
 
 # Preparation
-Here you can find a step-by-step instructions how to implement a stub of a new validation and activate it. Make sure you read through all the sections first before you start any coding. It will help you understand what is actually needed and how can you reuse both the example class in this GitHub repository and existing code in your S/4Hana system. 
+Learn about how to implement and activate a new validation in your system. 
+Make sure you read through all the sections before start coding so you can reuse the example class from this repository and the existing code in your system.
 
 ## [1. Customizing](Customizing.md)
 ## [2. Business Add-In implementation](BAdIImplementation.md)
@@ -12,7 +13,7 @@ Here you can find a step-by-step instructions how to implement a stub of a new v
 TBD
 
 
-replace all OVF with OVS
+replace all OVF with Online Validation
 
 
 Analyze the service API
